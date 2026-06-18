@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skies — Weather</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <header class="top-bar">
+      <span class="brand">weather app.</span>
+      <span class="tagline">real-time weather, anywhere</span>
+    </header>
+
+    <main class="main">
+
+      <section class="search-section">
+        <div class="search-wrap">
+          <input
+            type="text"
+            id="cityInput"
+            class="city-input"
+            placeholder="Enter a city name…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="searchBtn" class="search-btn" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+        <p class="hint-text">Try: Tokyo, Ahmedabad, New York, Paris</p>
+      </section>
+
+      <section id="weatherCard" class="weather-card hidden">
+        <div class="card-top">
+          <div class="location-block">
+            <h1 id="cityName" class="city-name"></h1>
+            <p id="countryName" class="country-name"></p>
+          </div>
+          <div class="icon-block">
+            <img id="weatherIcon" src="" alt="weather icon" class="w-icon" />
+            <p id="weatherDesc" class="weather-desc"></p>
+          </div>
+        </div>
+
+        <div class="temp-display">
+          <span id="tempValue" class="temp-big"></span>
+          <span class="temp-unit">°C</span>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-pill">
+            <span class="stat-label">Feels like</span>
+            <span id="feelsLike" class="stat-value"></span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Humidity</span>
+            <span id="humidity" class="stat-value"></span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Wind</span>
+            <span id="windSpeed" class="stat-value"></span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Visibility</span>
+            <span id="visibility" class="stat-value"></span>
+          </div>
+        </div>
+
+        <div class="updated-line">
+          <span id="lastUpdated"></span>
+        </div>
+      </section>
+
+      <section id="errorBox" class="error-box hidden">
+        <p id="errorMsg" class="error-msg"></p>
+      </section>
+
+      <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+        <p>Fetching weather…</p>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <p>Webpage engineered by <a href="https://www.linkedin.com/in/aryapatel1908/" target="_blank" rel="noopener" class="author-name">Arya Patel</a></p>
+      <p>Powered by <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeatherMap</a></p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
